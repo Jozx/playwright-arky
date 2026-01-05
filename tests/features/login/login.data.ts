@@ -12,8 +12,9 @@ dotenv.config({ path: path.resolve(__dirname, '../.env') });
  */
 export const loginData = {
     // Application URLs
-    LOGIN_URL: process.env.LOGIN_URL ?? 'https://arky-seven.vercel.app/login',
-    DASHBOARD_URL: process.env.DASHBOARD_URL ?? 'https://arky-seven.vercel.app/dashboard',
+    // Construct URLs using BASE_URL from .env
+    LOGIN_URL: `${process.env.BASE_URL}/login`,
+    DASHBOARD_URL: `${process.env.BASE_URL}/dashboard`,
 
     // Valid Credentials (loaded from .env for security)
     VALID_EMAIL_ARCHITECT: process.env.ARCHITECT_EMAIL ?? '',
