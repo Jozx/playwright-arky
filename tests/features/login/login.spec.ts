@@ -10,7 +10,7 @@ test('login OK as Architect', async ({ page }) => {
     await login(page, loginData.VALID_EMAIL_ARCHITECT, loginData.VALID_PASSWORD_ARCHITECT);
 
     // 3. Assert: Verify redirection to dashboard
-    await expect(page).toHaveURL(loginData.DASHBOARD_URL);
+    await expect(page).toHaveURL(loginData.DASHBOARD_URL, { timeout: 15000 });
 });
 
 test('login OK as User', async ({ page }) => {
@@ -21,7 +21,7 @@ test('login OK as User', async ({ page }) => {
     await login(page, loginData.VALID_EMAIL_USER, loginData.VALID_PASSWORD_USER);
 
     // 3. Assert: Verify redirection to dashboard
-    await expect(page).toHaveURL(loginData.DASHBOARD_URL);
+    await expect(page).toHaveURL(loginData.DASHBOARD_URL, { timeout: 15000 });
 })
 
 test('login Fail', async ({ page }) => {

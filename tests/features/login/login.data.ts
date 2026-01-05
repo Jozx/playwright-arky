@@ -1,9 +1,4 @@
-
-import dotenv from 'dotenv';
-import path from 'path';
-
-// Explicitly load .env to ensure process.env is populated regardless of runner config
-dotenv.config({ path: path.resolve(__dirname, '../.env') });
+// Environment variables are loaded via playwright.config.ts
 
 /**
  * Login Data Object
